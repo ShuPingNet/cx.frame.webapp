@@ -4,7 +4,16 @@
  * @date 2018-1-10
  * @warn 禁止使用envConfig/webApi/viewId/viewUrl 关键字
  */
-(function() {
+require.config({
+    paths : {
+        "webapi" : ["config_api"],
+        "view" : ["config_view"],
+        
+    }
+})
+
+
+define(function() {
 	window.config = {
 		/**
 		 * 环境配置
@@ -17,12 +26,9 @@
 		},
 
 		/**
-		 * webApi 接口url地址
+		 * webApi 接口url地址  webapi.js
 		 */
-		webApi: {
-			login: "Auth/DoLogin",
-			resetPassword: "My/ResetPassword"
-		},
+		webApi: {},
 
 		/**
 		 * webview窗体唯一标识
@@ -47,4 +53,4 @@
 			return url;
 		}
 	}
-}());
+});
