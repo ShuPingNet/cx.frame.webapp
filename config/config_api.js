@@ -1,12 +1,8 @@
-define(function() {
-	if(!window.config) {
-		console.log("未加载config.js");
-		return;
-	}
+define('webapi',function() {
 	//api数据接口路径
-	var _obj = {
+	var webApi = {
 		login: "Auth/DoLogin",
 		resetPassword: "My/ResetPassword"
 	}
-	window.config.webApi = this._obj;
+	return webApi;
 });

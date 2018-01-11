@@ -4,17 +4,8 @@
  * @date 2018-1-10
  * @warn 禁止使用envConfig/webApi/viewId/viewUrl 关键字
  */
-require.config({
-    paths : {
-        "webapi" : ["config_api"],
-        "view" : ["config_view"],
-        
-    }
-})
-
-
-define(function() {
-	window.config = {
+define(['view', 'webapi'], function(_view, _api) {
+	var base = {
 		/**
 		 * 环境配置
 		 */
@@ -28,29 +19,21 @@ define(function() {
 		/**
 		 * webApi 接口url地址  webapi.js
 		 */
-		webApi: {},
+		webApi: _api,
 
 		/**
 		 * webview窗体唯一标识
 		 */
-		viewId: {
-			login: "page1",
-		},
+		viewId: _view.viewId,
 
 		/**
 		 * webview相对路径, 
 		 * 与config.viewId.xxx对应
 		 */
-		viewUrl: {
-			page1: "view/login/login.html"
-		},
-		
+		viewUrl: _view.viewUrl,
+
 		//根据viewId获取webview对应url地址
-		getPageUrl: function(id) {
-			var url;
-			url = this.viewId[id]?this.viewUrl[id]:"";
-			console.log(url);
-			return url;
-		}
+		getPageUrl: _view.getPageUrl
 	}
+	return base;
 });

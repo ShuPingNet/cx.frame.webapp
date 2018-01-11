@@ -1,16 +1,22 @@
-define(function() {
-	if(!window.config) {
-		console.log("未加载config.js");
-		return;
-	}
+define('view',function() {
 	//webview窗体唯一标识
-	var _viewid = {
+	var viewId = {
 		login: "page1"
-	}
+	};
 	//webview相对路径
-	var _viewurl = {
+	var viewUrl = {
 		page1: "view/login/login.html"
+	};
+	//根据viewid获取url
+	var getPageUrl = function(id) {
+		var url;
+		url = this.viewId[id] ? this.viewUrl[id] : "";
+		console.log(url);
+		return url;
 	}
-	window.config.viewId = this._viewid;
-	window.config.viewUrl = this._viewurl;
+	return {
+		viewId: viewId,
+		viewUrl: viewUrl,
+		getPageUrl:getPageUrl
+	};
 });
