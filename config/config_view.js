@@ -1,17 +1,17 @@
 define('view',function() {
 	//webview窗体唯一标识
 	var viewId = {
-		login: "page1"
+		login: "login"
 	};
 	//webview相对路径
 	var viewUrl = {
-		page1: "view/login/login.html"
+		login: "view/login/login.html"
 	};
 	//根据viewid获取url
 	var getPageUrl = function(id) {
 		var url;
 		url = this.viewId[id] ? this.viewUrl[id] : "";
-		console.log(url);
+		console.log("config_view.js 获取到url为"+url);
 		return url;
 	}
 	return {

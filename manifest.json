@@ -10,7 +10,7 @@
 	"icons": {
 		"72": "icon.png"
 	},
-	"launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"launch_path": "test.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
 	"developer": {
 		"name": "",/*开发者名称*/
 		"email": "",/*开发者邮箱地址*/
@@ -188,6 +188,38 @@
 					"xxhdpi": ""
 				}
 			}
+		}
+	},
+	"dependencies": {
+		"pages": {
+			"test.html": {
+				"resources": [],
+				"refer": [
+					"view/login/login.html"
+				],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"config/main.js",
+				"config/config_api.js",
+				"view/home/js/home.js",
+				"lib/common.js",
+				"config/require.js",
+				"config/config_view.js",
+				"fonts/mui.ttf",
+				"config/config.js",
+				"css/mui.css",
+				"lib/winwebview.js",
+				"lib/ejs.js",
+				"lib/mui.min.js",
+				"view/home/home.html",
+				"css/mui.min.css",
+				"lib/jquery-3.1.1.min.js",
+				"view/login/js/login.js",
+				"lib/mui.js"
+			]
 		}
 	}
 }

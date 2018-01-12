@@ -28,7 +28,10 @@
 						console.log(ejs) ;
 						//测试webview操作模块加载
 						wv.test();
-						
+						//测试跳转到login页面和传值
+						wv.openMuiPage(base.viewId.login,null,null,{
+							test:"test"
+						});
 					});
 				});
 			});
