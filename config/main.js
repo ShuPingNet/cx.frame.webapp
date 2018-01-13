@@ -18,7 +18,9 @@ require.config({
 		"mui": "../lib/mui",
 		"ejs": "../lib/ejs",
 		"common": "../lib/common",
-		"winwebview":"../lib/winwebview"
+		"winwebview":"../lib/winwebview",
+		"validate":"../lib/jquery.validate.min",
+		"supersized":"../lib/supersized.3.2.7.min"
 	},
 	//不符合AMD规范的js作为模块配置
 	shim: {
@@ -29,6 +31,14 @@ require.config({
 		ejs: {
 			deps: [],
 			exports: 'ejs'
+		},
+		validate: {
+			deps: ['jquery'],
+			exports: 'validate'
+		},
+		supersized: {
+			deps: ['jquery'],
+			exports: 'supersized'
 		}
 	}
 })
